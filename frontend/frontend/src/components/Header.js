@@ -10,7 +10,9 @@ const Header = () => {
   const [value, setvalue] = useState();
 
   return (
-    <AppBar position="sticky" sx={{ background: "linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%)" }}>
+    <AppBar position="sticky" sx={{ backgroundColor:" #FA8BFF",
+      backgroundImage: "linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%)"
+      }}>
       <Toolbar>
         <Box >
           {!isLoggedin && <> <Button LinkComponent={Link} to="/auth" variant='contained' sx={{ color: "white", borderRadius: "11px", fontSize: "10px" }}>login</Button>
@@ -18,9 +20,11 @@ const Header = () => {
           {isLoggedin && <Button onClick={() => dispath(authActions.logout())} LinkComponent={Link} to="/auth" variant='contained' sx={{ color: "white", borderRadius: "11px", marginLeft: "15px", fontSize: "10px" }}>log out</Button>
           }
         </Box>
+        <Tabs textColor="inherit" sx={{ marginLeft: "100px" }}>
+        <Tab LinkComponent={Link} to="/blogs" label="All Blogs"></Tab>
+        </Tabs>
         {isLoggedin &&
-          <Tabs textColor="inherit" sx={{ marginLeft: "130px" }} value={value} onChange={(e, value) => setvalue(value)}>
-            <Tab LinkComponent={Link} to="/blogs" label="All Blogs"></Tab>
+          <Tabs textColor="inherit" sx={{ marginLeft: "110px" }} value={value} onChange={(e, value) => setvalue(value)}>
             <Tab LinkComponent={Link} to="/myBlogs" label="My Blogs"></Tab>
             <Tab LinkComponent={Link} to="/blogs/add" label="Add Blog"></Tab>
           </Tabs>

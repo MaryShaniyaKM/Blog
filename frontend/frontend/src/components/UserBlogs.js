@@ -19,7 +19,11 @@ const UserBlogs = () => {
     <div>
      {blogs && 
      blogs.map((blog,index)=>(
-     <Blog title={blog.title}
+     <Blog 
+     id={blog._id}
+     key={index}
+     isUser={true}
+     title={blog.title}
       description={blog.description} 
       imageURL={blog.image} 
       userName={blog.user.firstname}/>))}

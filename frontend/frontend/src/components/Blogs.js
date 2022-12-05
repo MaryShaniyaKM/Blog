@@ -14,7 +14,17 @@ const Blogs = () => {
   console.log(blogs);
   return (
     <div>
-    {blogs && blogs.map((blog,index)=>(<Blog title={blog.title} description={blog.description} imageURL={blog.image} userName={blog.user.firstname[0]}/>))}
+    {
+      
+    blogs && blogs.map((blog,index)=>(
+    <Blog 
+    id={blog._id}
+            isUser={localStorage.getItem("userId") === blog.user._id}
+            
+    title={blog.title} 
+    description={blog.description} 
+    imageURL={blog.image} 
+    userName={blog.user.firstname[0]}/>))}
     </div>
   )
 }

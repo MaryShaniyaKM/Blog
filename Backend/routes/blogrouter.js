@@ -6,4 +6,4 @@ blogrouter.post('/add',addBlog)
 blogrouter.put("/update/:id",updateBlog);
 blogrouter.get("/:id",getById);
 blogrouter.delete("/:id",deleteBlog);
-blogrouter.get("/user/:id",getByUserId)
+blogrouter.get("/user/:id",getByUserId);

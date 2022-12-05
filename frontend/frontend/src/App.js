@@ -9,17 +9,17 @@ import BlogDetail from './components/BlogDetail';
 import AddBlog from './components/AddBlog';
 import { useSelector } from "react-redux";
 const App = () => {
-  const isLoggedin=useSelector((state)=>state.isLoggedin)
+  const isLoggedin = useSelector((state) => state.isLoggedin)
   console.log(isLoggedin)
   return (
-    <React.Fragment>
+    <React.Fragment >
       <header><Header /></header>
       <main>
         <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/myBlogs" element={<UserBlogs/>} />
+          <Route path="/myBlogs" element={<UserBlogs />} />
           <Route path="/myBlogs/:id" element={<BlogDetail />} />
           <Route path="/blogs/add" element={<AddBlog />} />
         </Routes>
@@ -27,5 +27,4 @@ const App = () => {
     </React.Fragment>
   )
 }
-
 export default App

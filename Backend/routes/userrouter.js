@@ -1,4 +1,4 @@
-import express from "express"
+import express from "express";
 import { getAllUser, login, signup } from "../controllers/user-controller";
 export const router=express.Router();
 router.get('/',getAllUser);

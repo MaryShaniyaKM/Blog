@@ -4,6 +4,8 @@ import axios from "axios";
 import { authActions } from "../store";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
+import Alert from '@mui/material/Alert';
 function Auth() {
   const naviagte = useNavigate();
   const dispath = useDispatch();
@@ -51,7 +53,7 @@ function Auth() {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <Box
           maxWidth={400}
           display="flex"
@@ -62,7 +64,12 @@ function Auth() {
           padding={3}
           margin="auto"
           marginTop={5}
-          borderRadius={5}>
+          borderRadius={5}
+          style={{backgroundColor: "#D9AFD9",
+          backgroundImage:" linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)",
+         
+          }}
+          >
           <Typography variant="h5"> {isSignup ? "Signup" : "Login"}</Typography>
           {isSignup &&
             <><TextField type={"firstname"} name="firstname" value={inputs.firstname} onChange={handleChange} margin="normal" label='firstname' />
@@ -86,6 +93,7 @@ function Auth() {
 
 
           <Button color="warning" type="submit" variant="contained" sx={{ borderRadius: '15px' }}>submit</Button>
+          
           <Button onClick={() => { setIsSignup(!isSignup) }}
           >change to {isSignup ? "Login" : "Signup"}</Button>
         </Box>
